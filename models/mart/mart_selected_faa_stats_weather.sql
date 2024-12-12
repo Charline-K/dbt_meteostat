@@ -8,4 +8,4 @@ select mfs.*
 		, pwd.wind_peakgust_kmh
 from {{ref("mart_faa_stats")}} mfs
 left join {{ref("prep_weather_daily")}} pwd
-on mfs.faa = pwd.airport_code;
+on mfs.faa = pwd.airport_code
