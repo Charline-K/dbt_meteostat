@@ -9,6 +9,6 @@ select airport_code
 , avg(avg_wind_speed_kmh) as avg_wind_speed_kmh_week
 , max(wind_peakgust_kmh) as wind_peakgust_kmh_week
 , avg(sun_minutes) as sun_minutes_week
-from prep_weather_daily pwd 
+from {{ref("prep_weather_daily")}} pwd 
 group by airport_code, cw
 order by airport_code, cw
